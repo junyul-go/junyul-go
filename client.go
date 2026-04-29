@@ -23,7 +23,7 @@ import (
 	"github.com/oklog/ulid/v2"
 )
 
-const SDKVersion = "1.0.0"
+const SDKVersion = "1.0.2"
 
 // Client is the main entry point. Safe for concurrent use.
 type Client struct {

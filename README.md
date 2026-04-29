@@ -2,7 +2,7 @@
 
 Junyul compliance SDK for Go.
 
-Status: GA-ready once `v1.0.0` resolves through the public Go module proxy.
+Status: GA. Latest verified release: `v1.0.2`.
 
 Module path:
 
