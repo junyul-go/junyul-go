@@ -1,0 +1,25 @@
+name: go-test
+
+on:
+  push:
+    branches: [main]
+    tags: ["v*.*.*"]
+  pull_request:
+
+permissions:
+  contents: read
+
+jobs:
+  go-test:
+    name: Go test
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-go@v5
+        with:
+          go-version: "1.22"
+          cache: true
+      - run: go mod tidy
+      - run: git diff --exit-code go.mod go.sum
+      - run: go test ./...
+      - run: go vet ./...
