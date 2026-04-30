@@ -23,7 +23,7 @@ import (
 	"github.com/oklog/ulid/v2"
 )
 
-const SDKVersion = "1.2.1"
+const SDKVersion = "1.2.2"
 
 var errCircuitOpen = errors.New("junyul: transport circuit is open")
 

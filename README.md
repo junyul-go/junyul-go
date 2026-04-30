@@ -2,7 +2,7 @@
 
 Junyul compliance SDK for Go.
 
-Status: GA. Latest verified release: `v1.2.1`.
+Status: GA. Latest verified release: `v1.2.2`.
 
 Module path:
 
