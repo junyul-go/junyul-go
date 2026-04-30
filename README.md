@@ -2,7 +2,7 @@
 
 Junyul compliance SDK for Go.
 
-Status: GA. Latest verified release: `v1.0.2`.
+Status: GA. Latest verified release: `v1.2.1`.
 
 Module path:
 
@@ -32,4 +32,11 @@ defer client.Close()
 reply, err := junyul.Track(ctx, client, "gpt_chatbot_v1", func() (string, error) {
     return callOpenAI(ctx, message)
 })
+
+client.RecordHeartbeat("gpt_chatbot_v1")
 ```
+
+Tracked errors and panics are recorded with hashed failure metadata and no raw
+error message. Production clients enable the file-backed outbox and circuit
+breaker by default; use `WithoutOutbox`, `WithOutbox`, `WithCircuitBreaker`,
+and `WithQueueLimits` to tune transport behavior.
